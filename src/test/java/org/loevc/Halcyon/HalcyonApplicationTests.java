@@ -1,10 +1,10 @@
-package org.loevc.velora;
+package org.loevc.Halcyon;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class VeloraApplicationTests {
+class HalcyonApplicationTests {
 
     @Test
     void contextLoads() {

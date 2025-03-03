@@ -3,15 +3,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.loevc</groupId>
-    <artifactId>Velora</artifactId>
+    <artifactId>Halcyon</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Velora</name>
-    <description>Velora</description>
+    <name>Halcyon</name>
+    <description>Halcyon</description>
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <spring-boot.version>2.7.6</spring-boot.version>
+        <spring-boot.version>2.7.18</spring-boot.version>
     </properties>
     <dependencies>
         <dependency>
@@ -54,7 +54,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring-boot.version}</version>
                 <configuration>
-                    <mainClass>org.loevc.velora.VeloraApplication</mainClass>
+                    <mainClass>org.loevc.Halcyon.HalcyonApplication</mainClass>
                     <skip>true</skip>
                 </configuration>
                 <executions>
