@@ -7,6 +7,10 @@ import java.security.NoSuchProviderException;
 @Slf4j
 public class Logistics {
 
+    static void doNothing(){
+        log.info("do nothing");
+    }
+
     public void planDelivery(){
         log.info("super create transport");
         Transport t = createTransport();
