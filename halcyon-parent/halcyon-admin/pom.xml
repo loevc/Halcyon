@@ -3,11 +3,21 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.loevc</groupId>
-    <artifactId>halcyon-executor</artifactId>
+    <artifactId>halcyon-admin</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>halcyon-executor</name>
-    <description>halcyon-executor</description>
+    <name>halcyon-admin</name>
+    <description>halcyon-admin</description>
+
+    <parent>
+        <groupId>org.loevc</groupId>
+        <artifactId>halcyon-parent</artifactId>
+        <version>0.0.1</version>
+<!--        default this path， if change the path , notice to modify this config    -->
+<!--        <relativePath>../../halcyon-parent/pom.xml</relativePath>-->
+    </parent>
+
     <properties>
+        <!--        1.8.0_411       -->
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -24,6 +34,13 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+<!--        https://start.aliyun.com/    -->
+<!--        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bootstrap</artifactId>
+        </dependency>-->
+
     </dependencies>
     <dependencyManagement>
         <dependencies>
@@ -54,7 +71,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring-boot.version}</version>
                 <configuration>
-                    <mainClass>org.loevc.cloud.halcyon.executor.HalcyonExecutorApplication</mainClass>
+                    <mainClass>org.loevc.cloud.halcyon.admin.HalcyonAdminApplication</mainClass>
                     <skip>true</skip>
                 </configuration>
                 <executions>
