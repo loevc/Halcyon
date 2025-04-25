@@ -30,4 +30,11 @@ public class UnsafeTests {
         unsafe.allocateMemory(10);
 
     }
+
+    @Test
+    void test3(){
+        Unsafe unsafe = UnsafeUtils.getUnsafe();
+        assert unsafe != null;
+//        unsafe.putInt();
+    }
 }
