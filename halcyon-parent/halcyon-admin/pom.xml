@@ -59,6 +59,13 @@
         </dependency>
 
 
+        <dependency>
+            <groupId>org.loevc</groupId>
+            <artifactId>halcyon-common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+
 
     </dependencies>
     <dependencyManagement>
