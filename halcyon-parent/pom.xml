@@ -16,6 +16,7 @@
         <module>halcyon-common</module>
         <module>halcyon-executor</module>
         <module>halcyon-listener</module>
+        <module>halcyon-thread-pool-spring-boot-starter</module>
     </modules>
 
     <properties>

@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  org.loevc.halcyon.thread.pool.spring.boot.starter.configuration.ThreadPoolAutoConfiguration

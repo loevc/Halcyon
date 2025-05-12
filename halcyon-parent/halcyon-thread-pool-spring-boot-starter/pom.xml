@@ -2,27 +2,27 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
+
+
     <groupId>org.loevc</groupId>
-    <artifactId>halcyon-admin</artifactId>
+    <artifactId>halcyon-thread-pool-spring-boot-starter</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>halcyon-admin</name>
-    <description>halcyon-admin</description>
+    <name>halcyon-thread-pool-spring-boot-starter</name>
+    <description>halcyon-thread-pool-spring-boot-starter</description>
 
     <parent>
         <groupId>org.loevc</groupId>
         <artifactId>halcyon-parent</artifactId>
         <version>0.0.1</version>
-<!--        default this path， if change the path , notice to modify this config    -->
-<!--        <relativePath>../../halcyon-parent/pom.xml</relativePath>-->
     </parent>
 
     <properties>
-        <!--        1.8.0_411       -->
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <spring-boot.version>2.7.6</spring-boot.version>
     </properties>
-
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -34,44 +34,6 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-starter-tomcat</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-undertow</artifactId>
-        </dependency>
-
-<!--        https://start.aliyun.com/    -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-bootstrap</artifactId>
-        </dependency>
-
-
-        <dependency>
-            <groupId>org.loevc</groupId>
-            <artifactId>halcyon-common</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.loevc</groupId>
-            <artifactId>halcyon-thread-pool-spring-boot-starter</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-
-
     </dependencies>
     <dependencyManagement>
         <dependencies>
@@ -102,7 +64,9 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring-boot.version}</version>
                 <configuration>
-                    <mainClass>org.loevc.cloud.halcyon.admin.HalcyonAdminApplication</mainClass>
+                    <mainClass>
+                        org.loevc.halcyon.thread.pool.spring.boot.starter.HalcyonThreadPoolSpringBootStarterApplication
+                    </mainClass>
                     <skip>true</skip>
                 </configuration>
                 <executions>
