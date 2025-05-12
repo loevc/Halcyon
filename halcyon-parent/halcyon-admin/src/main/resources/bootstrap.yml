@@ -5,3 +5,6 @@ server:
     threads:
       io: 2
       worker: 8
+#spring:
+#  application:
+#    name: @project.artifactId@

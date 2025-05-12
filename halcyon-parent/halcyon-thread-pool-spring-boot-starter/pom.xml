@@ -7,7 +7,7 @@
 
     <groupId>org.loevc</groupId>
     <artifactId>halcyon-thread-pool-spring-boot-starter</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <name>halcyon-thread-pool-spring-boot-starter</name>
     <description>halcyon-thread-pool-spring-boot-starter</description>
 

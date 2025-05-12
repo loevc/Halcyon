@@ -1,2 +1,6 @@
 # for spring boot project config file
 #spring.boot.enableautoconfiguration: true
+spring:
+  output:
+    ansi:
+      enabled: always  # 强制启用（可选值：detect|always|never）
