@@ -10,7 +10,7 @@ import org.springframework.transaction.support.DefaultTransactionDefinition;
 import org.springframework.transaction.support.TransactionCallbackWithoutResult;
 import org.springframework.transaction.support.TransactionTemplate;
 
-@Component
+//@Component
 public class TransactionSample {
 
     @Autowired
