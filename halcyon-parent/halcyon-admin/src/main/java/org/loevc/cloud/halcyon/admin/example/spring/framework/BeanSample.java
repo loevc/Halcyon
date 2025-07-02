@@ -25,18 +25,18 @@ public class BeanSample {
             }
         }*/
 
-        Object o = new Object();
-        applicationContext.getBeanFactory().registerSingleton("o", o);
-        System.out.println("end");
-
-/*        System.out.println(applicationContext.getBean("userService"));
-        System.out.println(applicationContext.getBean("userService"));
-        System.out.println(applicationContext.getBean("userService"));
-        System.out.println(applicationContext.getBean("userService1"));
-        System.out.println(applicationContext.getBean("userService2"));*/
-
-        GoodSpuService spuService = (GoodSpuService) applicationContext.getBean("goodSpuService");
-        spuService.print();
+//        Object o = new Object();
+//        applicationContext.getBeanFactory().registerSingleton("o", o);
+//        System.out.println("end");
+//
+///*        System.out.println(applicationContext.getBean("userService"));
+//        System.out.println(applicationContext.getBean("userService"));
+//        System.out.println(applicationContext.getBean("userService"));
+//        System.out.println(applicationContext.getBean("userService1"));
+//        System.out.println(applicationContext.getBean("userService2"));*/
+//
+//        GoodSpuService spuService = (GoodSpuService) applicationContext.getBean("goodSpuService");
+//        spuService.print();
 
     }
 
