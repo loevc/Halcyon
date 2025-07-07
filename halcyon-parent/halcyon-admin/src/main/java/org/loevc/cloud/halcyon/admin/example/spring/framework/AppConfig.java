@@ -4,6 +4,7 @@ package org.loevc.cloud.halcyon.admin.example.spring.framework;
 import org.springframework.beans.factory.annotation.Autowire;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
@@ -15,6 +16,7 @@ import javax.sql.DataSource;
 
 @ComponentScan("org.loevc.cloud.halcyon.admin.example.spring.framework")
 @EnableTransactionManagement
+@Configuration
 public class AppConfig {
 
 /*    @Bean
@@ -44,6 +46,7 @@ public class AppConfig {
         return transactionManager;
     }
 
+    @Bean
     public DataSource dataSource(){
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setUrl("jdbc:mysql://192.168.1.9:3306/loevc?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2B8&allowMultiQueries=true&allowPublicKeyRetrieval=true");

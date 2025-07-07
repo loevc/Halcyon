@@ -49,7 +49,7 @@ public class OrderService implements InitializingBean {
 
     @Transactional
     public void execSql(){
-        jdbcTemplate.execute("insert into t1 values ('1','alice', 20)");
+        jdbcTemplate.execute("insert into t1 values ('2','bob', 10)");
         throw new NullPointerException();
     }
 }
