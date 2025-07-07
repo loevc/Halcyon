@@ -38,6 +38,8 @@ public class BeanSample {
 //        GoodSpuService spuService = (GoodSpuService) applicationContext.getBean("goodSpuService");
 //        spuService.print();
 
+        orderService.execSql();
+
     }
 
 }

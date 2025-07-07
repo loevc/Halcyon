@@ -2,13 +2,18 @@ package org.loevc.cloud.halcyon.admin.example.spring.framework;
 
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 @Component
 public class OrderService implements InitializingBean {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
 
 //    public OrderService (UserService userService123) {
     public OrderService (UserService userService) {
@@ -39,5 +44,12 @@ public class OrderService implements InitializingBean {
     public void afterPropertiesSet() throws Exception {
         System.out.println(userService);
         System.out.println("afterPropertiesSet");
+    }
+
+
+    @Transactional
+    public void execSql(){
+        jdbcTemplate.execute("insert into t1 values ('1','alice', 20)");
+        throw new NullPointerException();
     }
 }
