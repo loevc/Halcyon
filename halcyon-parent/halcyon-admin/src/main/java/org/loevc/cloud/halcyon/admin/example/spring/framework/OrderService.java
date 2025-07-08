@@ -4,6 +4,7 @@ import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 @Component
@@ -49,7 +50,13 @@ public class OrderService implements InitializingBean {
 
     @Transactional
     public void execSql(){
+//        jdbcTemplate.execute("insert into t1 values ('1','alice', 20)");
         jdbcTemplate.execute("insert into t1 values ('2','bob', 10)");
-        throw new NullPointerException();
+        execSql2();
+    }
+
+    @Transactional(propagation = Propagation.NEVER)
+    public void execSql2(){
+        jdbcTemplate.execute("insert into t1 values ('3','mark', 33)");
     }
 }
