@@ -47,6 +47,15 @@
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-test</artifactId>
         </dependency>
+
+
+<!--        <dependency>-->
+<!--            need plugins process-->
+<!--            <groupId>org.jetbrains.kotlinx</groupId>-->
+<!--            <artifactId>kotlinx-serialization-json</artifactId>-->
+<!--            <version>1.6.0</version>-->
+<!--        </dependency>-->
+
     </dependencies>
 
 

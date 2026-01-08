@@ -1,4 +1,7 @@
 package org.loevc.cloud.halcyon.common.entity
 
-class UserInfoKotlin {
+class UserInfo {
+
+    var id: String? = null;
+
 }

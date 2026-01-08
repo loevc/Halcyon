@@ -3,7 +3,8 @@ package org.loevc.cloud.halcyon.common.entity;
 import java.time.LocalDateTime;
 import java.util.Date;
 
-public class UserInfo {
+@Deprecated
+public class UserInfoDeprecated {
 
     private String id;
 
