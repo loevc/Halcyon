@@ -8,6 +8,11 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 public class Q2841 {
 
+    /**
+     * 栈、双端队列： pop push
+     * 队列： offer poll （含有异常： add remove）
+     * map ： put remove
+     */
     class Solution {
         public long maxSum(List<Integer> nums, int m, int k) {
             // 维护一个map 来记录size和m的关系
