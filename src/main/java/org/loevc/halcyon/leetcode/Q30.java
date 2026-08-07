@@ -22,6 +22,7 @@ public class Q30 {
             }
 
             boolean lastFlag = false;
+            // 核心应该减少这个外循环
             for (int i = 0; i < s.length() - len + 1; ++i) {
                 String str = s.substring(i, i + len);
                 boolean flag = true;
