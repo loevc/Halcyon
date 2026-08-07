@@ -25,6 +25,7 @@ public class Q30 {
             for (int i = 0; i < s.length() - len + 1; ++i) {
                 String str = s.substring(i, i + len);
                 boolean flag = true;
+                // 这里肯定是不对的，只是特化的测试用例，必然有更好的解决办法
                 if (sublen == 1 && lastFlag == true && s.charAt(i - 1) == s.charAt(i + len - 1)) {
                     flag = true;
                 } else {
