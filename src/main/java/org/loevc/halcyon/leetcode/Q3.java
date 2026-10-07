@@ -10,33 +10,31 @@ public class Q3 {
     class Solution {
         public int lengthOfLongestSubstring(String s) {
             char[] chars = s.toCharArray();
+            int n = chars.length;
+            int pre = 0;
+            int cur = 0;
             int res = 0;
-            int l = 0;
-            int r = 0;
-            int temp = 0;
-            Set<Character> sets = new HashSet<>();
             Map<Character, Integer> map = new HashMap<>();
-            while (r < chars.length) {
-                char c = chars[r];
-                if (sets.contains(c)) {
-                    sets.clear();
-                    res = Math.max(res, temp);
-                    temp = 0;
-                    r = map.get(c) + 1;
-                    map.clear();
+            while (cur < n) {
+                if (map.containsKey(chars[cur])) {
+                    // 排除 ccbbcc 类型， 如果让pre倒退是不合理的
+                    pre = Math.max(map.get(chars[cur]) + 1, pre);
+                    map.put(chars[cur], cur);
+                    ++cur;
                 } else {
-                    map.put(c, r);
-                    ++temp;
-                    ++r;
-                    sets.add(c);
+                    map.put(chars[cur], cur);
+                    cur++;
                 }
+                res = Math.max(cur - pre, res);
+                System.out.println("第" + cur + "次循环，pre=" + pre + ", cur=" + cur + ", res=" + res + ", map=" + map);
             }
-            res = Math.max(res, temp);
             return res;
         }
     }
 
-     public static void main(String[] args) {
-         System.out.println(new Q3().new Solution().lengthOfLongestSubstring("1R1T7"));
-     }
+    public static void main(String[] args) {
+//         System.out.println(new Q3().new Solution().lengthOfLongestSubstring("1R1T7"));
+//        System.out.println(new Q3().new Solution().lengthOfLongestSubstring("pwwkew"));
+        System.out.println(new Q3().new Solution().lengthOfLongestSubstring("ccbbcc"));
+    }
 }
