@@ -5,6 +5,9 @@ import java.util.Map;
 
 public class Q76 {
 
+    /**
+     * 似乎还有好几个漏洞
+     */
     class Solution {
         public String minWindow(String s, String t) {
             // 维护 final lr
