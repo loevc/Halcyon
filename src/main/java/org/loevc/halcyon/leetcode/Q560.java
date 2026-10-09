@@ -15,11 +15,13 @@ public class Q560 {
                 pre[i + 1] = pre[i] + nums[i];
             }
             int cnt = 0;
+            map.put(pre[0], 1);
             for (int j = 1; j < n + 1; ++j) {
-                for (int i = 0; i <= j - 1; ++i) {
-                    if (pre[j] - pre[i] == k)
-                        ++cnt;
+
+                if (map.containsKey(pre[j] - k)) {
+                    cnt += map.get(pre[j] - k);
                 }
+                map.put(pre[j], map.getOrDefault(pre[j], 0) + 1);
             }
             return cnt;
 
