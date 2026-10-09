@@ -2,6 +2,9 @@ package org.loevc.halcyon.leetcode;
 
 public class Q53 {
 
+    /**
+     * Kanade算法，主要是想明白，子问题
+     */
     class Solution {
         public int maxSubArray(int[] nums) {
             int curSum = nums[0];
