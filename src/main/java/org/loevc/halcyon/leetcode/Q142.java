@@ -23,7 +23,7 @@ public class Q142 {
         }
     }
 
-
+    // Floyd 判圈算法
     public class Solution {
         public ListNode detectCycle(ListNode head) {
             ListNode slow = head;
