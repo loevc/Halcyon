@@ -11,4 +11,19 @@ public class TreeNode {
         this.left = left;
         this.right = right;
     }
+
+    public void printInOrder(){
+        StringBuilder stringBuilder = new StringBuilder();
+        inOrder(this, stringBuilder);
+        stringBuilder.append("\b\b");
+        System.out.println(stringBuilder);
+    }
+
+    private void inOrder(TreeNode root, StringBuilder stringBuilder){
+        if (root == null) return ;
+        inOrder(root.left, stringBuilder);
+        stringBuilder.append(root.val).append("->");
+        inOrder(root.right, stringBuilder);
+    }
+
 }
