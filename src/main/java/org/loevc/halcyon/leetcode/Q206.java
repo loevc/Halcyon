@@ -13,22 +13,18 @@ public class Q206 {
      * }
      */
 
-    /**
-     * 为什么简单题，做着这么费劲！
-     */
     class Solution {
         public ListNode reverseList(ListNode head) {
-            ListNode dummy = new ListNode(0);
-            dummy.next = null;
-            ListNode cur = new ListNode(0);
-            cur.next = head;
-            while (cur.next != null) {
-                cur.next = head.next;
-                head.next = dummy.next;
-                dummy.next = head;
-                head = cur.next;
+            if (head == null || head.next == null) return head;
+            ListNode pre = null;
+            ListNode cur = head;
+            while(cur != null){
+                ListNode node = cur;
+                cur = cur.next;
+                node.next = pre;
+                pre = node;
             }
-            return dummy.next;
+            return pre;
         }
     }
 
