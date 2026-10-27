@@ -13,53 +13,49 @@ public class Q25 {
      * }
      */
 
-    /**
-     * 没有一个方法能看，怎么写的这么垃圾，两个方法都是！
-     */
+
     class Solution {
         public ListNode reverseKGroup(ListNode head, int k) {
-            ListNode fast = head;
             ListNode slow = head;
-            for (int i = 0; i < k-1; ++i) {
+            ListNode fast = head;
+            for (int i = 0; i < k; ++i) {
                 fast = fast.next;
             }
-            ListNode dummy = fast;
-            fast = fast.next;
-            ListNode tail = reverse(slow, k);
+            ListNode dummy = reverse(slow, k);
+            slow.next = fast;
+            int cnt = 0;
             while (fast != null) {
-                slow = fast;
-                for (int i = 0; i < k-1; ++i) {
+                for (int i = 0; i < k; ++i) {
                     fast = fast.next;
+                    ++cnt;
                     if (fast == null)
                         break;
                 }
-                if (fast == null){
-                    tail.next = slow;
+                if (cnt != k)
                     break;
-                }
-                ListNode dummy2 = fast;
-                tail.next = dummy2;
-                fast = fast.next;
-                tail = reverse(slow, k);
+                ListNode lastTail = slow;
+                slow = slow.next;
+                ListNode temp = reverse(slow, k);
+                lastTail.next = temp;
+                slow.next = fast;
+                cnt = 0;
             }
             return dummy;
         }
 
-        // 应该返回尾部节点
         private ListNode reverse(ListNode head, int k) {
             if (head == null || head.next == null)
                 return head;
-            ListNode cur = new ListNode();
-            ListNode tail = head;
-            ListNode pre = head;
-            while (k-- > 0) {
-                pre = pre.next;
-                head.next = cur;
-                cur = head;
-                head = pre;
+            ListNode pre = null;
+            ListNode cur = head;
+            while (cur != null && k > 0) {
+                ListNode temp = cur;
+                cur = cur.next;
+                temp.next = pre;
+                pre = temp;
+                --k;
             }
-            tail.next = null;
-            return tail;
+            return pre;
         }
     }
 
