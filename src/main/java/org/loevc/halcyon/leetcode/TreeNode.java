@@ -23,11 +23,56 @@ public class TreeNode {
         System.out.println(stringBuilder);
     }
 
+    public void printLevelOrder(){
+        StringBuilder stringBuilder = new StringBuilder();
+        levelOrder(this, stringBuilder);
+        stringBuilder.append("\b\b");
+        System.out.println(stringBuilder);
+    }
+
     private void inOrder(TreeNode root, StringBuilder stringBuilder){
         if (root == null) return ;
         inOrder(root.left, stringBuilder);
         stringBuilder.append(root.val).append("->");
         inOrder(root.right, stringBuilder);
+    }
+
+
+    private void levelOrder(TreeNode root, StringBuilder sb) {
+        if (root == null) return;
+
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            boolean hasNextLevel = false;
+
+            for (int i = 0; i < size; i++) {
+                TreeNode node = queue.poll();
+
+                if (node == null) {
+                    sb.append("null->");
+                    continue;
+                }
+
+                sb.append(node.val).append("->");
+
+                queue.offer(node.left);
+                queue.offer(node.right);
+
+                if (node.left != null || node.right != null) {
+                    hasNextLevel = true;
+                }
+            }
+
+            sb.append("\n");
+
+            // 当前层没有任何非空节点可以继续向下扩展
+            if (!hasNextLevel) {
+                break;
+            }
+        }
     }
 
     public static TreeNode buildTreeByLevel(Integer[] nums) {
